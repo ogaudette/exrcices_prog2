@@ -73,3 +73,11 @@ print(("*")*20)
 mots = ['bonjour', 'programmation', 'python', 'dictionnaire', 'structure']
 dict_mot_long = {mot: len(mot) for mot in mots}
 print(dict_mot_long)
+#2
+prix_ht =  {'produit1': 100, 'produit2': 200, 'produit3': 300}
+prix_rabais = {produit: prix*0.95 for produit, prix in prix_ht.items()}
+print(prix_rabais)
+#3
+original = {"a": 1, "b": 2, "c": 3}
+inverse = {valeur : clé for clé, valeur in original.items()}
+print(inverse)
