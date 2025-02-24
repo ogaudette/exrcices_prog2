@@ -1,9 +1,14 @@
 import math
+import unittest
+from math import pi
+
 # 1
 """ Créez une classe CompteBancaire avec les
 spécifications suivantes """
+
+
 class CompteBancaire:
-    def __init__(self, solde_initiale = 0):
+    def __init__(self, solde_initiale=0):
         self.__solde = solde_initiale
 
     def deposer(self, montant_depot):
@@ -24,11 +29,13 @@ class CompteBancaire:
     def afficher_solde(self):
         print(f"Solde actuel : {self.__solde}$")
 
+
 compte1 = CompteBancaire(1200)
 compte1.retirer(500)
 compte1.deposer(69)
 compte1.retirer(349)
 compte1.afficher_solde()
+
 
 # 2
 class Point:
@@ -43,11 +50,13 @@ class Point:
         distance = math.sqrt(math.pow(self.__x, 2) + math.pow(self.__y, 2))
         print(f"{distance:.4f} u")
 
+
 point1 = Point(1, 2)
 point1.distance_origine()
 point1.coordonnees()
 point2 = Point(3, 4)
 point2.distance_origine()
+
 
 #3
 class Rectangle:
@@ -83,5 +92,62 @@ class Rectangle:
     def perimetre(self):
         return 2 * self.__long + 2 * self.__large
 
+
 rectangle1 = Rectangle(100, 100)
+
+
+class Cercle:
+    def __init__(self, rayon):
+        self.__rayon = rayon
+
+    @property
+    def rayon(self):
+        return self.__rayon
+
+    @rayon.setter
+    def rayon(self, rayon):
+        if rayon <= 0:
+            raise ValueError("putain ça doit être positif")
+        self.__rayon = rayon
+
+    def changer_rayon(self, nouveau_rayon):
+        if nouveau_rayon <= 0:
+            raise ValueError("putain POSITIF")
+        self.__rayon = nouveau_rayon
+
+    def aire(self):
+        return pi * (self.__rayon) ** 2
+
+    def perimetre(self):
+        return 2 * pi * (self.__rayon)
+
+
+class TestCercle(unittest.TestCase):
+    def setUp(self):
+        """Méthode exécuter avant chaque test"""
+        self.cercle = Cercle(3)
+
+    def tearDown(self):
+        """méthode exécuter après chaque test"""
+        pass
+
+    def test_création_cercle(self):
+        """Méthode qui permet de tester si la création du cercle est valide"""
+        self.assertEqual(self.cercle.rayon, 3)
+
+    def test_creation_cercle_invalide_rayon(self):
+        """méthode qui permet de tester la création d'un cercle de rayon négatif"""
+        with self.assertRaises(ValueError):
+            Cercle(-3)
+
+    def test_perimetre(self):
+        """Test perimetre"""
+        perimetre = 2*pi*3
+        self.assertAlmostEqual(self.cercle.perimetre(), perimetre)
+
+    def test_aire(self):
+        """test aire"""
+        aire_attendue = pi*3**2
+        self.assertAlmostEqual(self.cercle.aire(), aire_attendue)
+
 

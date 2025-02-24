@@ -56,3 +56,11 @@ class personne:
 Alice = personne("Alice", "Toto", -20)
 print(Alice.nom)
 print(Alice.age)
+
+class Etudiant(personne):
+    def __init__(self, nom, prenom, annee):
+        super().__init__(self, nom, prenom, annee)
+        self.__annee = annee
+
+    def afficher_age(self):
+        print(f"Étudiant a {2025 - self.__annee} ans.")
