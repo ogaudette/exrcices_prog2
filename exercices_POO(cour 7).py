@@ -142,12 +142,48 @@ class TestCercle(unittest.TestCase):
 
     def test_perimetre(self):
         """Test perimetre"""
-        perimetre = 2*pi*3
+        perimetre = 2 * pi * 3
         self.assertAlmostEqual(self.cercle.perimetre(), perimetre)
 
     def test_aire(self):
         """test aire"""
-        aire_attendue = pi*3**2
+        aire_attendue = pi * 3 ** 2
         self.assertAlmostEqual(self.cercle.aire(), aire_attendue)
 
 
+class Etudiant:
+    def __init__(self, id, nom, prenom):
+        self.id = id
+        self.nom = nom
+        self.prenom = prenom
+        self.cours = []  # Liste des cours suivis par l'Etudiant
+
+    def consulterCours(self):
+        return [cours.titre for cours in self.cours]
+
+    def inscrireAuCours(self, cours):
+        if cours not in self.cours:
+            self.cours.append(cours)
+            cours.ajouter_Etudiant(self)
+
+
+class Cours:
+    def __init__(self, code, titre, credits):
+        self.titre = titre
+        self.credits = credits
+        self.code = code
+        self.Etudiants = []  # Liste des Étudiants inscrits
+
+    def afficher_details(self):
+        return f"Cours:{self.titre}, Code:{self.credits}, Credits:{self.code}."
+
+    def ajouter_etudiant(self, Etudiant):
+        if Etudiant not in self.Etudiants:
+            self.Etudiants.append(Etudiant)
+
+
+# Exemple d'utilisation
+Etudiant1 = Etudiant(1, "Alice", "Bob")
+cours_python = Cours(101, "Structure de données en python", 3)
+Etudiant1.inscrireAuCours(cours_python)
+print(Etudiant1.consulterCours())
