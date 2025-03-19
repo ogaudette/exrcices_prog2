@@ -25,11 +25,16 @@ class GroupeForme:
 
         if formes is not None:
             for forme in formes:
-        # self
+                self.ajouter(forme)
 
     def ajouter(self, forme):
         if not isinstance(forme, Forme):
             raise TypeError("Objet doit être instance de la forme")
+        self.formes.append(forme)
 
     def aire_totale(self):
         return sum(formes.aires() for formes in self.formes)
+
+    def __iter__(self):
+        """Elle permet d'itérer sur les formes du groupes"""
+        return iter(self.formes)

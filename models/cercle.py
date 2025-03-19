@@ -16,4 +16,4 @@ class Cercle(Forme):
         if isinstance(other,Cercle):
             return self.aire()+other.aire()
         else:
-            ?????
+            raise TypeError("L'opération n'est possible que entre 2 cercle")
