@@ -36,7 +36,7 @@ print(f"Chemin absolu: {obtenir_chemin_absolu}")
 
 # Test si fichier existe
 fichier_existe = os.path.exists(r"C:\Users\6331477\Pictures\Screenshots\Capture d’écran 2025-03-24 095514.png")
-print(fichier_existe)   # ça marche
+print(fichier_existe)  # ça marche
 
 # créer objet path
 chemin2 = Path("donnees/fichier.txt")
@@ -86,7 +86,7 @@ shutil.move('source', 'destination')
 
 # IV. Exploration des dossiers : lister le contenu
 # Avec os, on explore le contenu des dossiers de la manière suivante
-contenu = os.listdir(".") # va retourner une liste contenant les noms des fichiers contenu dans le repertoire
+contenu = os.listdir(".")  # va retourner une liste contenant les noms des fichiers contenu dans le repertoire
 fichiers = [f for f in contenu if os.path.isfile(f)]
 dossiers = [d for d in contenu if os.path.isdir(d)]
 
@@ -98,7 +98,7 @@ for item in chemin.iterdir():
     elif item.is_dir():
         print(f"Dir: {item.name}")
     else:
-        print (f"Élément inconnu: {item.name}")
+        print(f"Élément inconnu: {item.name}")
 
 # IV. Exploration des dossiers : Parcourir recursivement le dossier
 # Avec os.walk
@@ -122,6 +122,7 @@ with open("exemple.txt", "r") as fichier:
     for ligne in fichier:
         print(ligne.strip())
 
+
 # VI. Recherche de fichiers
 def rechercher_par_nom(dossier, nom):
     resultats = []
@@ -132,8 +133,9 @@ def rechercher_par_nom(dossier, nom):
                 resultats.append(chemin)
     return resultats
 
+
 # Avec pathlib
-def rechercher_par_extension (dossier, ext):
+def rechercher_par_extension(dossier, ext):
     if not ext.startswith("."):
         ext = "." + ext
-    return list (Path(dossier).glob (f"**/*{ext}"))
+    return list(Path(dossier).glob(f"**/*{ext}"))

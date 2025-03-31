@@ -97,7 +97,7 @@ from abc import ABC, abstractmethod
 
 
 class GroupeForme:
-    """cette classe représente un groupe de formes"""
+    """Cette classe représente un groupe de formes"""
     def __init__(self, formes=None):
         self.formes = []
 
