@@ -83,6 +83,58 @@ class GestionNoteMathematique:
 
         return resultats
 
+    def archiver_notes_anciennes(self, jours):
+        """
+        Déplace les notes plus anciennes que le nombre de jours spécifié vers le dossier archives.
+
+        """
+        # Calculer la date limite
+        date_limite = datetime.now() - datetime.time(days=jours)
+        dossier_archives = self.dossier_racine / "archives"
+
+        # S'assurer que le dossier archives existe
+        dossier_archives.mkdir(exist_ok=True)
+
+        notes_archivees = 0
+
+        # Parcourir tous les dossiers de catégories (sauf archives)
+        for categorie in self.categories[:-1]:  # Toutes sauf "archives"
+            dossier_categorie = self.dossier_racine / categorie
+
+            # Vérifier si le dossier existe
+            if not dossier_categorie.exists():
+                continue
+
+            # Parcourir tous les fichiers de la catégorie
+            for fichier in dossier_categorie.iterdir():
+                # Vérifier si c'est un fichier
+                if fichier.is_file():
+                    # Obtenir la date de modification du fichier
+                    temps_modification = fichier.stat().st_mtime
+                    date_modification = datetime.datetime.fromtimestamp(temps_modification)
+
+                    # Vérifier si le fichier est plus ancien que la date limite
+                    if date_modification < date_limite:
+                        # Chemin de destination dans les archives
+                        chemin_destination = dossier_archives / fichier.name
+
+                        # Déplacer le fichier
+                        fichier.rename(chemin_destination)
+                        notes_archivees += 1
+
+        print(f"{notes_archivees} note(s) archivée(s)")
+        return notes_archivees
+
+    def afficher_resultats(self, resultats):
+        """
+        Affiche les résultats d'une recherche.
+        """
+        if not resultats:
+            print("Aucun résultat trouvé.")
+        else:
+            print(f"{len(resultats)} note(s) trouvée(s):")
+            for i, chemin in enumerate(resultats, 1):
+                print(f"{i}. {chemin}")
 
 
 monchemin2 = "C:\\Users\\6331477\\Documents\\ProjetGestionNotesMaths"
@@ -98,6 +150,10 @@ G1.creer_note("algebre", "Equations du second degré",
 G1.creer_note("geometrie", "Théorème de Pythagore",
                             "a² + b² = c²\n\nDans un triangle rectangle, le carré de l'hypoténuse est égal à la somme des carrés des deux autres côtés.")
 
-print(" Recherche par titre pour le titre 'equation'")
-resultats_titre=G1.rechercher_note_par_titre("triangle")
+# print(" Recherche par titre pour le titre 'equation'")
+# resultats_titre=G1.rechercher_note_par_titre("triangle")
+# print(resultats_titre)
+
+print(" Recherche par contenu pour le texte 'triangle'")
+resultats_titre=G1.rechercher_note_par_contenu("triangle")
 print(resultats_titre)
