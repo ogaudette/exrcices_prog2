@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4666619f-55e6-436f-9369-9fb84fc8ffe8" name="Changes" comment="algorithme">
+    <list default="true" id="4666619f-55e6-436f-9369-9fb84fc8ffe8" name="Changes" comment="gestion note math 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/résolution_algorithmes.py" beforeDir="false" afterPath="$PROJECT_DIR$/résolution_algorithmes.py" afterDir="false" />
     </list>
@@ -52,6 +52,7 @@
     "Python.dictionnaire.executor": "Run",
     "Python.exercices_POO(cour 7).executor": "Run",
     "Python.main2.executor": "Run",
+    "Python.manipulation_fichiers.executor": "Run",
     "Python.résolution_algorithmes.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -65,6 +66,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="M:\Prog 2\exrcices_prog2\manipulation_fichier" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Python tests for exercices_POO(cour 7).TestCercle" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="exercices" />
@@ -117,14 +123,16 @@
       <workItem from="1739369010129" duration="48000" />
       <workItem from="1739369108111" duration="7581000" />
       <workItem from="1743601439343" duration="112000" />
+      <workItem from="1743603153225" duration="1812000" />
+      <workItem from="1744204297370" duration="7849000" />
     </task>
-    <task id="LOCAL-00001" summary="algorithme">
+    <task id="LOCAL-00001" summary="gestion note math 2">
       <option name="closed" value="true" />
-      <created>1744643372363</created>
+      <created>1743608755790</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1744643372363</updated>
+      <updated>1743608755790</updated>
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -144,14 +152,15 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="algorithme" />
-    <option name="LAST_COMMIT_MESSAGE" value="algorithme" />
+    <MESSAGE value="gestion note math 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="gestion note math 2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/exrcices_prog2$POO_classe_cour6_.coverage" NAME="POO_classe(cour6) Coverage Results" MODIFIED="1739371486091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/exrcices_prog2$exercices_POO_cour_7_.coverage" NAME="exercices_POO(cour 7) Coverage Results" MODIFIED="1739376630990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/exrcices_prog2$dictionnaire.coverage" NAME="dictionnaire Coverage Results" MODIFIED="1739196534194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/exrcices_prog2$POO_classe_cour6_.coverage" NAME="POO_classe(cour6) Coverage Results" MODIFIED="1739371486091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/exrcices_prog2$main2.coverage" NAME="main2 Coverage Results" MODIFIED="1742397561500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
-    <SUITE FILE_PATH="coverage/exrcices_prog2$résolution_algorithmes.coverage" NAME="résolution_algorithmes Coverage Results" MODIFIED="1744645250204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/exrcices_prog2$résolution_algorithmes.coverage" NAME="résolution_algorithmes Coverage Results" MODIFIED="1744813953773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/exrcices_prog2$manipulation_fichiers.coverage" NAME="manipulation_fichiers Coverage Results" MODIFIED="1744212557067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/manipulation_fichier" />
   </component>
 </project>
