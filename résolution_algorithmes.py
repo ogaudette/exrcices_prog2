@@ -34,9 +34,9 @@ print(sous_ensemble_somme([3, 4, 12, 5, 2, 9], 7))  # Output: [4, 5]
 # V.exercice d'application
 # 1
 def puissance(n, exposant):
-    if n == 1 or exposant == 0:
+    if n == 1 or exposant == 0:  # de base
         return 1
-    return n * puissance(n, exposant - 1)
+    return n * puissance(n, exposant - 1)    # récursif
 
 
 print(puissance(5, 2))
