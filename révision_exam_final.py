@@ -117,7 +117,7 @@ import csv
 
 
 def sauvegarder_parc(parc, fichier):
-    try:
+
         with open(fichier, "w", newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerow(["csv"])
